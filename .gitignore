@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+dist/
+build/
+*.log
+*.tsbuildinfo
+
+# env / secrets
+.env*
+!.env.example
+
+# editor
+.idea/
+.vscode/
+
+# Codex and Claude workstation-local skills
+.agents/
+.claude/
+
+# Agent worker checkouts (project guidance is tracked)
+/.ai
+
+# local secrets
+/local
+/output
+
+# Local Cloudflare runtime state and secret inputs
+.wrangler/
+.dev.vars*
