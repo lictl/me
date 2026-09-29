@@ -266,6 +266,12 @@ The agent gets full control of its own running environment inside a container. T
 - **Super-admin chat edits:** the supervisor verifies the super admin's platform identity itself and applies the change. The agent relays the request but does not decide it, so a message that only claims to be the super admin cannot change the lists.
 - **Cap at 0:** messages from non-whitelisted people that arrive while the cap is 0 are dropped, not queued.
 
+**Chat approval** (what the agent may see; the limits above govern whom it may talk to)
+
+- **Ignored by default:** a chat the super admin has not approved is ignored. Its content is dropped and not stored, and the super admin sees only that a chat is pending.
+- **Observe-only or active:** the super admin can approve a chat as observe-only (the agent sees and records it but cannot send) or active (it may send, within the limits above). Approval applies to messages that arrive afterwards.
+- **Recording in approved chats:** every message in an approved chat is recorded, including those from blacklisted people and those dropped under a cap of 0. "Dropped" above means not answered and not queued, not unrecorded. The limits decide only whether the agent may answer, and a dropped message does not start a turn.
+
 **Left fully open to the agent:** its workspace, shell, packages, files, skills and tools, and the whole evolvable layer.
 
 ## Deferred to implementation
@@ -278,5 +284,5 @@ These are decided when we build them, not now.
 - **Persona anchors:** the super admin writes the level scales and examples from real logs.
 - **Coding-worker backends:** start with one, add others later.
 - **Egress rules:** all traffic is allowed and logged at first, then tightened from the logs.
-- **Dashboard and list details:** authentication, default limits, and how dropped messages are handled.
+- **Dashboard and list details:** anything beyond what [002-walking-skeleton.md](002-walking-skeleton.md) settles (admin authentication, closed default limits, recording of dropped messages).
 - **Per-person data deletion:** manual, done by the super admin on request.
