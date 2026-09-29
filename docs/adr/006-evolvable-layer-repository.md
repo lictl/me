@@ -1,11 +1,11 @@
 # 006: The evolvable layer lives in a separate private git repository
 
-- Status: Proposed
+- Status: Accepted
 - Recorded: 2026-09-29
-- Decision date: Pending
+- Decision date: 2026-09-29
 - Decision maker: Lucas Li (direction given in the open-questions walkthrough chat, 2026-09-29); technical authorship and details: Claude
-- Decision source: open-questions walkthrough chat, 2026-09-29 (not linkable); the text below awaits human review
-- Human review: Pending
+- Decision source: open-questions walkthrough chat, 2026-09-29 (not linkable)
+- Human review: Approved by Lucas Li in chat on 2026-09-29 for revision 45bdeca (PR #4); the reviewed text is unchanged
 - Related specs: [001-product.md](../specs/001-product.md), [002-walking-skeleton.md](../specs/002-walking-skeleton.md)
 - Supersedes: None
 
@@ -13,7 +13,7 @@
 
 The root spec has every change to the agent's prompts, skills, tools, orchestration and memory policy versioned as a patch in git, with rollback, and every record tagged with the harness version ("Self-improvement and evaluation"). This repository is public. The real persona, learned skills and memory policies can contain personal details derived from chats, and they must not be published. Spec 002 defines the harness version as the kernel version plus a revision identifier of the evolvable-layer files the kernel launched.
 
-## Decision (proposed)
+## Decision
 
 1. **The real evolvable layer** (persona, prompts, skills, tools, memory policies) lives in a **separate private git repository**. Its name is chosen at implementation.
 2. **This repository ships a generic seed** of the evolvable layer: default prompts and tools with no personal content. It is the starting point for the private repository, and later seed changes are merged into it deliberately.

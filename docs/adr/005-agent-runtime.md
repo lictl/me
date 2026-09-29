@@ -1,11 +1,11 @@
 # 005: First agent runtime: a tool-calling loop
 
-- Status: Proposed
+- Status: Accepted
 - Recorded: 2026-09-29
-- Decision date: Pending
+- Decision date: 2026-09-29
 - Decision maker: Lucas Li (direction given in the open-questions walkthrough chat, 2026-09-29); technical authorship and details: Claude
-- Decision source: open-questions walkthrough chat, 2026-09-29 (not linkable); the text below awaits human review
-- Human review: Pending
+- Decision source: open-questions walkthrough chat, 2026-09-29 (not linkable)
+- Human review: Approved by Lucas Li in chat on 2026-09-29 for revision 45bdeca (PR #4); the reviewed text is unchanged
 - Related specs: [001-product.md](../specs/001-product.md), [002-walking-skeleton.md](../specs/002-walking-skeleton.md)
 - Supersedes: None
 
@@ -15,7 +15,7 @@ The root spec gives the agent full control of its own workspace, shell, packages
 
 The shape affects three things: how much of the agent's behaviour is auditable, the API the model gateway must offer (with or without tool calls), and how large the agent's own execution surface is.
 
-## Decision (proposed)
+## Decision
 
 The first real agent is a plain LLM **tool-calling loop**.
 

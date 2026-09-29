@@ -1,9 +1,9 @@
 # 002: Walking skeleton: kernel, agent and loopback chat
 
-- Status: Approved for revision a0a0081; the revision on this branch is pending review
+- Status: Approved
 - Owner: Lucas Li
 - Intent source: human decisions in the design walkthrough chat, 2026-09-29, building on [001-product.md](001-product.md); the owner's resolutions of the open questions, 2026-09-29 (issue #3)
-- Human review: Approved by Lucas Li in chat on 2026-09-29 for revision a0a0081 (PR #2). This revision (issue #3): Pending
+- Human review: Approved by Lucas Li in chat on 2026-09-29 for revision a0a0081 (PR #2) and, as revised, for revision 45bdeca (PR #4); the reviewed text is unchanged
 - Parent: [001-product.md](001-product.md)
 
 ## Problem
