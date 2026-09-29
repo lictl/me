@@ -8,7 +8,7 @@ Self-Improving Social Agent Harness: an AI persona that lives in Telegram group 
   - It is a human-authored design doc with no recorded approval status, and it does not follow the spec headings below. Treat it as the human's current direction. Do not rewrite, rename or restructure it without human direction.
   - Its "Key decisions" table records choices made by the human but is not an ADR. Cite it, and write an ADR when a decision needs its own rationale and alternatives.
 - Specs: `docs/specs/`, as `NNN-descriptive-slug.md`. Link the parent spec from each child. The walking-skeleton spec `002-walking-skeleton.md` is the first child of the root spec.
-- Decisions: `docs/adr/`, as `NNN-descriptive-slug.md`. ADRs and specs have separate number sequences. Take the next number above the largest existing one in each, and never reuse or renumber. The trust tiers, connector plane, kernel–agent interface and language are recorded in ADRs `001` to `004`.
+- Decisions: `docs/adr/`, as `NNN-descriptive-slug.md`. ADRs and specs have separate number sequences. Take the next number above the largest existing one in each, and never reuse or renumber.
 - Project memory: `docs/memory/` (empty so far). Read only the notes relevant to the task.
 - Current work and delivery evidence: GitHub issues and PRs in `lictl/me` (see GitHub delivery below). Templates are in `.github/`.
 
