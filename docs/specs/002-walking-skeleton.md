@@ -1,9 +1,9 @@
 # 002: Walking skeleton: kernel, agent and loopback chat
 
-- Status: Draft
+- Status: Approved
 - Owner: Lucas Li
 - Intent source: human decisions in the design walkthrough chat, 2026-09-29, building on [001-product.md](001-product.md)
-- Human review: Pending
+- Human review: Approved by Lucas Li in chat on 2026-09-29 for revision a0a0081 (PR #2); the reviewed text is unchanged. The open questions below remain open.
 - Parent: [001-product.md](001-product.md)
 
 ## Problem
@@ -36,7 +36,7 @@ Example: a new chat "test-room" sends "hi". Nothing is stored and the dashboard 
 
 ## Constraints
 
-- Trust tiers, the connector interface, the port API and the language follow [ADR 001](../adr/001-trust-tiers.md) to [ADR 004](../adr/004-typescript-node.md). They are Proposed, so this spec depends on their approval.
+- Trust tiers, the connector interface, the port API and the language follow [ADR 001](../adr/001-trust-tiers.md) to [ADR 004](../adr/004-typescript-node.md). They are Accepted.
 - The admin API and dashboard bind to loopback or a private interface by default, and require a single admin token, stored only as a hash (walkthrough decision).
 - *Harness version* means the kernel version plus a revision identifier of the evolvable-layer files the kernel launched. In this slice those files are a local directory.
 - The system must run on a MacBook Pro (M1 Max, 32 GB) and on an Ubuntu Linux machine (walkthrough decision).

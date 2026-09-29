@@ -1,11 +1,11 @@
 # 001: Trust tiers: frozen kernel, trusted services, evolvable agent
 
-- Status: Proposed
+- Status: Accepted
 - Recorded: 2026-09-29
-- Decision date: Pending
+- Decision date: 2026-09-29
 - Decision maker: Lucas Li (direction given in the design walkthrough chat, 2026-09-29); technical authorship: Claude
-- Decision source: design walkthrough chat, 2026-09-29 (not linkable); the text below awaits human review
-- Human review: Pending
+- Decision source: design walkthrough chat, 2026-09-29 (not linkable)
+- Human review: Approved by Lucas Li in chat on 2026-09-29 for revision a0a0081 (PR #2); the reviewed text is unchanged
 - Related specs: [001-product.md](../specs/001-product.md), [002-walking-skeleton.md](../specs/002-walking-skeleton.md)
 - Supersedes: None
 
@@ -21,7 +21,7 @@ Three things must sit where the agent cannot reach them, yet do not belong in a 
 
 Putting all of these in the kernel makes it large and ties it to fast-moving libraries. Leaving them with the agent breaks the constraints above.
 
-## Decision (proposed)
+## Decision
 
 Adopt three tiers.
 
@@ -35,7 +35,7 @@ Rules:
 
 1. A service accepts calls only from the kernel. The agent reaches services only through the kernel's port API. A service that needs another service (for example the memory service calling the model gateway) does so with its own kernel-issued credential over a route the kernel defines; the path is decided in the memory slice.
 2. The kernel is the only writer of the event log. The memory service opens it read-only and owns everything derived from it (claims, graph, personas, embeddings), which remain rebuildable projections as in the root spec. The kernel, the log and the memory service share one host; embeddings are reached over HTTP.
-3. The kernel binds each turn to a visibility scope derived from the event that triggered it. The kernel enforces the scope on sends, and the memory service enforces it on reads. The agent cannot choose or widen it. *(New relative to the root spec; the reviewer should confirm it.)*
+3. The kernel binds each turn to a visibility scope derived from the event that triggered it. The kernel enforces the scope on sends, and the memory service enforces it on reads. The agent cannot choose or widen it. *(New relative to the root spec; confirmed at review.)*
 4. Memory policy code stays evolvable and runs on the agent side. The memory service stores and serves, and it enforces the invariants that policy code cannot override: append-only history, provenance on every claim, and visibility that never widens. Agent-authored records reach it as typed proposals.
 5. Kernel and services are both outside the evolvable layer. They differ by responsibility and rate of change, not by trust in the agent: the kernel stays small enough to audit, and services absorb external libraries.
 

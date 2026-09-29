@@ -1,11 +1,11 @@
 # 003: Kernel–agent interface: a single port API with kernel-driven turns
 
-- Status: Proposed
+- Status: Accepted
 - Recorded: 2026-09-29
-- Decision date: Pending
+- Decision date: 2026-09-29
 - Decision maker: Lucas Li (direction given in the design walkthrough chat, 2026-09-29); technical authorship: Claude
-- Decision source: design walkthrough chat, 2026-09-29 (not linkable); the text below awaits human review
-- Human review: Pending
+- Decision source: design walkthrough chat, 2026-09-29 (not linkable)
+- Human review: Approved by Lucas Li in chat on 2026-09-29 for revision a0a0081 (PR #2); the reviewed text is unchanged
 - Related specs: [001-product.md](../specs/001-product.md), [002-walking-skeleton.md](../specs/002-walking-skeleton.md)
 - Supersedes: None
 
@@ -15,7 +15,7 @@ The root spec describes the interface as narrow: append an event, propose a chan
 
 The interface must give the kernel control of budget, audit and version stamping. It must also stay usable while the agent runtime (a tool-calling loop or code execution) and the agent's language remain open.
 
-## Decision (proposed)
+## Decision
 
 1. **One endpoint.** The agent's only channel to the kernel and, through it, to every service is the kernel's port API. Ordinary web access and package installs remain open, as the root spec decides. Ports carry everything involving credentials, chat platforms, memory, models, proposals, delegation and schedules.
 2. **Schema-first, transport-neutral contract**, with a protocol version in the handshake. The first transport is HTTP for calls plus one streaming channel (WebSocket) for the inbox, on a private network. The kernel issues a bearer token for each run. It is valid only for the port API, and it is revoked when the run ends or is killed.

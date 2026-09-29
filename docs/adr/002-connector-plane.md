@@ -1,11 +1,11 @@
 # 002: IM connectors as trusted services with a curated typed interface
 
-- Status: Proposed
+- Status: Accepted
 - Recorded: 2026-09-29
-- Decision date: Pending
+- Decision date: 2026-09-29
 - Decision maker: Lucas Li (direction given in the design walkthrough chat, 2026-09-29); technical authorship: Claude
-- Decision source: design walkthrough chat, 2026-09-29 (not linkable); the text below awaits human review
-- Human review: Pending
+- Decision source: design walkthrough chat, 2026-09-29 (not linkable)
+- Human review: Approved by Lucas Li in chat on 2026-09-29 for revision a0a0081 (PR #2); the reviewed text is unchanged
 - Related specs: [001-product.md](../specs/001-product.md), [002-walking-skeleton.md](../specs/002-walking-skeleton.md)
 - Supersedes: None
 
@@ -18,7 +18,7 @@ Two forces shape the connector interface:
 - **Platform independence.** Platform quirks such as peer resolution, reconnects, backfill and flood waits must not leak into the agent or the kernel.
 - **Unbypassable send policy.** One comparable agent project reviewed during this design exposes its platform client through a raw pass-through, so any caller can ban, kick or message people outside policy. The kernel can enforce limits only if the connector offers nothing else.
 
-## Decision (proposed)
+## Decision
 
 1. **A connector is a separate trusted service** that holds one platform's credentials and session and accepts calls only from the kernel. Telegram (userbot, dedicated account) is the first. A loopback command-line connector is the second implementation, used in spec 002 to keep the interface platform-neutral.
 2. **The interface is curated and typed, with no raw pass-through.**

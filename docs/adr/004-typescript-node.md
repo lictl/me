@@ -1,11 +1,11 @@
 # 004: TypeScript on Node.js for the kernel, services and connectors
 
-- Status: Proposed
+- Status: Accepted
 - Recorded: 2026-09-29
-- Decision date: Pending
+- Decision date: 2026-09-29
 - Decision maker: Lucas Li (direction given in the design walkthrough chat, 2026-09-29); technical authorship: Claude
-- Decision source: design walkthrough chat, 2026-09-29 (not linkable); the text below awaits human review
-- Human review: Pending
+- Decision source: design walkthrough chat, 2026-09-29 (not linkable)
+- Human review: Approved by Lucas Li in chat on 2026-09-29 for revision a0a0081 (PR #2); the reviewed text is unchanged
 - Related specs: [001-product.md](../specs/001-product.md), [002-walking-skeleton.md](../specs/002-walking-skeleton.md)
 - Supersedes: None
 
@@ -20,7 +20,7 @@ The root spec sets no language. Constraints from the walkthrough and the root sp
 
 Observed on 2026-09-29 in a local checkout of a comparable TypeScript agent project (CyberGroupmate, AGPL-3.0; ideas only, no code copied): its `package.json` declares `@mtcute/node`, `better-sqlite3` and `sqlite-vec`, and its tests include a Telegram adapter and sqlite-vec. This is weak evidence that the libraries can coexist. It does not show that they fit this system, and this repository cannot verify it.
 
-## Decision (proposed)
+## Decision
 
 - The kernel, trusted services, connectors and dashboard are written in **TypeScript on Node.js 22 or newer**. The dashboard is a separate trusted UI service that calls the kernel's admin API ([ADR 001](001-trust-tiers.md)).
 - Port and connector schemas are defined once and shared as types, and they are **validated at runtime at every process boundary**.
