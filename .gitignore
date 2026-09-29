@@ -21,7 +21,7 @@ build/
 .claude/
 
 # Agent worker checkouts (project guidance is tracked)
-/.ai
+/.ai/worktree/
 
 # local secrets
 /local
